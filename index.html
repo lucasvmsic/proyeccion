@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyección Cobre</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+    input {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc; /* Añadir un borde */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+
+  /* Estilo al pasar el ratón sobre el input */
+  &:hover {
+    border-color: #66afe9; /* Cambiar color del borde al pasar el ratón */
+  }
+
+  /* Estilo al enfocar el input */
+  &:focus {
+    outline: none; /* Eliminar el contorno predeterminado en algunos navegadores */
+    border-color: #4d90fe; /* Cambiar color del borde al enfocar */
+    box-shadow: 0 0 8px rgba(77, 144, 254, 0.6); /* Sombra más pronunciada al enfocar */
+  }
+}
+
+    /* Estilos para el botón */
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #4CAF50; /* Color de fondo */
+      color: white; /* Color del texto */
+      border: none; /* Sin borde */
+      border-radius: 5px; /* Bordes redondeados */
+      transition: background-color 0.3s ease; /* Transición suave del color de fondo */
+    }
+
+    /* Cambiar color de fondo al pasar el ratón sobre el botón */
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    #result img {
+      max-width: 100%;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Proyección disponibilidad del cobre</h1>
+
+  <label for="inputValue">Ingresa un año:</label>
+  <input type="text" id="inputValue">
+
+  <button onclick="mostrarInformacion()">Mostrar Información</button>
+
+  <div id="result"></div>
+
+  <script>
+    function mostrarInformacion() {
+
+      // Obtener el elemento donde se mostrará la información
+      var resultDiv = document.getElementById("result");
+
+      // Borrar el contenido existente
+      resultDiv.innerHTML = "";
+
+      // Datos
+      var disponibilidad = {
+        2022: 190000000,
+        2023: 184553650.30,
+        2024: 178800554.91,
+        2025: 172716362.61,
+        2026: 166274824.33,
+        2027: 159447645.09,
+        2028: 152204324.40,
+        2029: 144867141.38,
+        2030: 137542574.11,
+        2031: 130219849.24,
+        2032: 122888889.28,
+        2033: 115708420.16,
+        2034: 108416220.84,
+        2035: 100979889.67,
+        2036: 93396577.84,
+        2037: 85663380.26,
+        2038: 77777334.39,
+        2039: 69735419.17,
+        2040: 61534553.79,
+        2041: 53171596.59,
+        2042: 44643343.77,
+        2043: 35946528.23,
+        2044: 27077818.30,
+        2045: 18033816.46,
+        2046: 8811058.01,
+        2047: 0,
+        2048: 0,
+        2049: 0,
+        2050: 0
+      };
+
+      // Obtener el valor ingresado por el usuario
+      var valorIngresado = document.getElementById("inputValue").value;
+
+      // Crear un elemento de imagen
+      var imagen = document.createElement("img");
+
+      // Asignar la ruta de la imagen (asegúrate de que la imagen esté en la misma carpeta que tu archivo HTML)
+      imagen.src = "grafico.png";
+      imagen.alt = "Imagen relacionada con el valor ingresado";
+
+      // Mostrar la información y la imagen en el div de resultado
+      var resultDiv = document.getElementById("result");
+      resultDiv.appendChild(imagen);
+
+      // Mostrar la disponibilidad de cobre para el año ingresado
+      var parrafo = document.createElement("p");
+      parrafo.textContent = "La disponibilidad de cobre en el año " + valorIngresado + " es de " + disponibilidad[valorIngresado]+" toneladas métricas.";
+      document.body.appendChild(parrafo);
+    }
+  </script>
+
+</body>
+</html>
