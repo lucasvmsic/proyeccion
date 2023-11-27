@@ -122,13 +122,16 @@
       imagen.alt = "Imagen relacionada con el valor ingresado";
 
       // Mostrar la información y la imagen en el div de resultado
-      var resultDiv = document.getElementById("result");
-      resultDiv.appendChild(imagen);
+
 
       // Mostrar la disponibilidad de cobre para el año ingresado
+      if(valorIngresado>=2022 && valorIngresado<=2050){
+      var resultDiv = document.getElementById("result");
+      resultDiv.appendChild(imagen);
       var parrafo = document.createElement("p");
       parrafo.textContent = "La disponibilidad de cobre en el año " + valorIngresado + " es de " + disponibilidad[valorIngresado]+" toneladas métricas.";
       document.body.appendChild(parrafo);
+    }
     }
   </script>
 
