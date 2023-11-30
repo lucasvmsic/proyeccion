@@ -56,6 +56,23 @@
       max-width: 100%;
       margin-top: 20px;
     }
+    footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #b1b2b2;
+  color: white;
+  text-align: center;
+}
+a{
+    text-decoration: none;
+    color:rgb(48, 60, 73);
+}
+a:hover{
+    transition: 0.5s ease;
+    color:rgb(105, 122, 140)
+}
   </style>
 </head>
 <body>
@@ -132,8 +149,11 @@
       parrafo.textContent = "La disponibilidad de cobre en el año " + valorIngresado + " es de " + disponibilidad[valorIngresado]+" toneladas métricas.";
       document.body.appendChild(parrafo);
     }
+    
     }
   </script>
-
+  <footer>
+    <p><a href="https://1drv.ms/x/s!Ag0oYFrSOU0SmiKjiYNNOnmHYUOC?e=FeqKi3" target="_blank">Metodología para la proyección</a></p>
+  </footer>
 </body>
 </html>
